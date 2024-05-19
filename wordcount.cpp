@@ -33,7 +33,10 @@ int main(int argc, char *argv[])
         char word[1024];
         while (fscanf(file, "%s", word) != EOF)
         {
-            count++;
+            count ++;
+            for (int i = 1; i < strlen(word) - 1; i ++)
+                if (word[i] == ',' && word[i - 1] != ',' && word[i + 1] != ',') 
+                    count ++;
         }
         printf("µ¥´ÊÊý=%d\n", count);
     }
